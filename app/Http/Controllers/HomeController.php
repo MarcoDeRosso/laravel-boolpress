@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $allPosts = Post::all();
-        $filteredPosts = Post::where('id','>', 50)->get();
-        return view('home', compact('allPosts','filteredPosts'));
+
+        return view('home', compact('allPosts'));
     }
 }
