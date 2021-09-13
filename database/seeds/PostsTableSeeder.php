@@ -17,7 +17,7 @@ class PostsTableSeeder extends Seeder
             $post= new Post();
             $post->author = $faker->words(3, true);
             $post->post_text= $faker->paragraph(6);
-            $post->image=$faker->image(null, 360, 360, 'animals', true, true, 'cats', true);
+            $post->image=$faker->imageUrl(360, 360, 'animals', true, 'cats');
             $post->date=$faker->dateTime();
             $post->save();
         }
