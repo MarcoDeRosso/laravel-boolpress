@@ -20,10 +20,4 @@
         </div>
     </div>
 </div>
-@foreach ($allPosts as $post)
-    <h2>{{$post->author}}</h2>
-    <img src="{{$post->image}}" alt="">
-    <p>{{$post->post_text}}</p>
-    <span>{{$post->date}}</span>
-@endforeach
 @endsection
