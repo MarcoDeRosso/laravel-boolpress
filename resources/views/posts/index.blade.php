@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container posts-container">
   <table class="table">
     <thead>
       <tr>
@@ -10,6 +10,7 @@
         <th scope="col">Image</th>
         <th scope="col">Post</th>
         <th scope="col">Date</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -20,6 +21,7 @@
                   <td><img src="{{$post->image}}" alt="image of {{$post->author}}"></td>
                   <td>{{$post->post_text}}</td>
                   <td>{{$post->date}}</td>
+                  <td><a href="{{route('posts.show',['post'=>$post->id])}}">Clicca qui!</a></td>
               </tr>
           @endforeach
     </tbody>
