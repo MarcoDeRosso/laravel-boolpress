@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container posts-container">
+<a href="{{route('posts.create')}}"><button type="button"  class="btn btn-success">Crea un nuovo Post!</button></a>
   <table class="table">
     <thead>
       <tr>
@@ -21,7 +22,10 @@
                   <td><img src="{{$post->image}}" alt="image of {{$post->author}}"></td>
                   <td>{{$post->post_text}}</td>
                   <td>{{$post->date}}</td>
-                  <td><a href="{{route('posts.show',['post'=>$post->id])}}">Clicca qui!</a></td>
+                  <td><a href="{{route('posts.show',['post'=>$post->id])}}"><button type="button" class="btn btn-primary">Leggi!</button></a>
+                    <button type="button" class="btn btn-warning">Modifica!</button>
+                    <button type="button" class="btn btn-danger">Elimina!</button>
+                  </td>
               </tr>
           @endforeach
     </tbody>
