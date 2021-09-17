@@ -24,8 +24,8 @@
                   <td>{{$post->date}}</td>
                   <td><a href="{{route('posts.show',['post'=>$post->id])}}"><button type="button" class="btn btn-primary"><i class="bi bi-zoom-in"></i></button></a>
                     <a href="{{route('posts.edit', $post)}}"><button type="button" class="btn btn-warning"><i class="bi bi-pencil"></i></button></a>
-                    <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-trash"></i></button>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$post->id}}"><i class="bi bi-trash"></i></button>
+                    <div class="modal fade" id="exampleModal{{$post->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -42,7 +42,7 @@
                             <form action="{{route('posts.destroy', $post)}}" method="POST">
                               @csrf
                               @method('DELETE')
-                              <button type="submit" class="btn btn-danger">Elimina</button>
+                              <button type="submit" data-target="#exampleModal{{$post->id}}" class="btn btn-danger">Elimina</button>
                             </form>
                             </div>
                           </div>
