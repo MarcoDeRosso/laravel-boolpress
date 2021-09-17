@@ -22,7 +22,7 @@
                   <td><img src="{{$post->image}}" alt="image of {{$post->author}}"></td>
                   <td>{{$post->post_text}}</td>
                   <td>{{$post->date}}</td>
-                  <td><a href="{{route('posts.show',['post'=>$post->id])}}"><button type="button" class="btn btn-primary">Leggi!</button></a>
+                  <td><a href="{{route('posts.show',['post'=>$post->id])}}"><button type="button" class="btn btn-primary">Leggi <i class="bi bi-zoom-in"></i></button></a>
                     <button type="button" class="btn btn-warning">Modifica!</button>
                     <button type="button" class="btn btn-danger">Elimina!</button>
                   </td>
