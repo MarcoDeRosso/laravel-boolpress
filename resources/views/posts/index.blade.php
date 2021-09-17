@@ -22,9 +22,13 @@
                   <td><img src="{{$post->image}}" alt="image of {{$post->author}}"></td>
                   <td>{{$post->post_text}}</td>
                   <td>{{$post->date}}</td>
-                  <td><a href="{{route('posts.show',['post'=>$post->id])}}"><button type="button" class="btn btn-primary">Leggi <i class="bi bi-zoom-in"></i></button></a>
-                    <button type="button" class="btn btn-warning">Modifica!</button>
-                    <button type="button" class="btn btn-danger">Elimina!</button>
+                  <td><a href="{{route('posts.show',['post'=>$post->id])}}"><button type="button" class="btn btn-primary"><i class="bi bi-zoom-in"></i></button></a>
+                    <a href="{{route('posts.edit', $post)}}"><button type="button" class="btn btn-warning"><i class="bi bi-pencil"></i></button></a>
+                    <form action="{{route('posts.destroy', $post)}}" method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                    </form>
                   </td>
               </tr>
           @endforeach
