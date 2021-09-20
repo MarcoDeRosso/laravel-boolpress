@@ -10,7 +10,8 @@
                     <h5 class="card-title">{{ $post->author }}</h5>
                     <p class="card-text">{{ $post->post_text }}</p>
                     @if(Auth::check())
-                        <a href="{{ route('posts.edit', $post) }}" class="btn btn-success">Edit</a>
+                        <a href="{{route('posts.show',['post'=>$post->id])}}"><button type="button" class="btn btn-primary"><i class="bi bi-zoom-in"></i></button></a>
+                        <a href="{{ route('posts.edit', $post) }}" class="btn btn-warning"><i class="bi bi-pencil"></i></button></a>
                     @endif
                 </div>
             </div>

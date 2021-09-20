@@ -12346,7 +12346,6 @@ button {
 
 .card-text {
   height: 300px;
-  overflow-y: scroll;
 }
 
 .posts-container .table img {
