@@ -8,6 +8,20 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-icons/font/bootstrap-icons.css';
 
+button{
+    margin: 12px 0;
+}
+.card{
+    padding: 12px;
+    &-title{
+        min-height: 50px;
+    }
+    &-text{
+        height: 300px;
+        overflow-y: scroll;
+    }
+}
+
 .posts-container{
     .table{
         img{

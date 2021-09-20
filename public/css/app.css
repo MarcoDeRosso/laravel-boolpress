@@ -12332,6 +12332,23 @@ a.text-dark:focus {
   }
 }
 
+button {
+  margin: 12px 0;
+}
+
+.card {
+  padding: 12px;
+}
+
+.card-title {
+  min-height: 50px;
+}
+
+.card-text {
+  height: 300px;
+  overflow-y: scroll;
+}
+
 .posts-container .table img {
   width: 100px;
 }
