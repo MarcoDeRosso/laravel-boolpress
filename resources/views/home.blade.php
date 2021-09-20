@@ -2,23 +2,19 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
+    <div class="row ">
+    @foreach($allPosts as $post)
+            <div class="card col-md-3" style="width: 18rem;">
+                <img class="card-img-top" src="{{ $post->image }}" alt="Card image cap">
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <h5 class="card-title">{{ $post->author }}</h5>
+                    <p class="card-text">{{ $post->post_text }}</p>
+                    @if(Auth::check())
+                        <a href="{{ route('posts.edit', $post) }}" class="btn btn-success">Edit</a>
                     @endif
-
-                    {{ __('You are logged in!') }}
-                    <a href="{{route('posts.index')}}">Vai ai post !</a>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection
