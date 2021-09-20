@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container posts-container">
-<a href="{{route('posts.index')}}"><button type="button"  class="btn btn-info"><- Torna indietro</button></a>
+<a href="{{route('posts.index')}}"><button type="button"  class="btn btn-secondary"><- Torna indietro</button></a>
 @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

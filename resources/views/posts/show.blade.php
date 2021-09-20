@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container ">
-<a href="{{route('posts.index')}}"><button type="button"  class="btn btn-info"><- Torna indietro</button></a>
+<a href="{{route('posts.index')}}"><button type="button"  class="btn btn-secondary"><- Torna indietro</button></a>
    <h1>{{$post->author}}</h1>
    <div class="d-flex justify-content-between align-items-center">
       <p>{{$post->post_text}}</p>
