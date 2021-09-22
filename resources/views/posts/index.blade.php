@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div class="d-flex justify-content-center">
+  {!! $allPosts->links() !!}
+</div>
+
 <div class="container posts-container">
 <a href="{{route('posts.create')}}"><button type="button"  class="btn btn-success">Crea un nuovo Post!</button></a>
   <table class="table">

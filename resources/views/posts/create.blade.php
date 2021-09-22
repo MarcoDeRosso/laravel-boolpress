@@ -12,7 +12,7 @@
             </ul>
         </div>
     @endif
-    <form class="d-flex justify-content-between align-items-center" action="{{route('posts.store')}}" method="post">
+    <form action="{{route('posts.store')}}" method="post">
         @csrf
         <label for="author">Autore :</label>
         <input type="text" name="author" id="author">
@@ -22,6 +22,19 @@
         <input type="text" name="image" id="image">
         <label for="date">Data :</label>
         <input type="date" name="date" id="date">
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="category_id">Options</label>
+                </div>
+                <select class="custom-select" id="category_id" name="category_id">
+                    <option selected>Choose...</option>
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
         <input class="btn btn-primary" type="submit" value="Invia">
     </form>
     

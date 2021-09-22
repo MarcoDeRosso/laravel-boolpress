@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+<div class="d-flex justify-content-center">
+  {!! $allPosts->links() !!}
+</div>
     <div class="row ">
     @foreach($allPosts as $post)
             <div class="card col-md-3" style="width: 18rem;">

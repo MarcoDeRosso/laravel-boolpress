@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $allPosts = Post::all();
+        $allPosts = Post::paginate(4);
         return view('home', compact('allPosts'));
         
     }
