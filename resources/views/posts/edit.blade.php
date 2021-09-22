@@ -31,7 +31,11 @@
                 </div>
                 <select class="custom-select" id="category_id" name="category_id">
                     @foreach($categories as $category)
-                        <option value="{{$category->id}}">{{ $category->name }}</option>
+                        @if ($post->category_id === $category->$id)
+                            <option selected value="{{$category->id}}">{{ $category->name }}</option>
+                        @else
+                            <option value="{{$category->id}}">{{ $category->name }}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>
