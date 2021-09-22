@@ -12,7 +12,8 @@
             </ul>
         </div>
     @endif
-    <form class="d-flex justify-content-between align-items-center" action="{{route('posts.update', $post)}}" method="POST">
+
+    <form action="{{route('posts.update', $post)}}" method="POST">
         @csrf
         @method('PUT')
         <label for="author">Autore :</label>
@@ -23,6 +24,18 @@
         <input type="text" name="image" id="image" value="{{$post->image}}">
         <label for="date">Data :</label>
         <input type="date" name="date" id="date" value="{{$post->date}}">
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="category_id">Options</label>
+                </div>
+                <select class="custom-select" id="category_id" name="category_id">
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
         <input class="btn btn-primary" type="submit" value="Invia">
     </form>
     
